@@ -3,26 +3,34 @@
         {
             "label": "C/C++: g++.exe 生成活动文件",
             "type": "shell",
-            "command": "C:/msys64/mingw64/bin/g++.exe",
+            "command": "C:/msys64/ucrt64/bin/g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "-O2", "-std=c++17",
-                "-finput-charset=UTF-8", "-fexec-charset=GBK",
-                 "${file}", // 编译当前文件
-                // 手动编译所有文件
-
-                // "${workspaceFolder}/Game2048/Game2048.cpp",
-                
-                "-o", "${fileDirname}/${fileBasenameNoExtension}.exe",
-                "-I", "C:/msys64/mingw64/include", // SFML 头文件路径
-                "-L", "C:/msys64/mingw64/lib", // SFML 库路径
+                "-finput-charset=UTF-8", "-fexec-charset=GBK", // 转换文件格式(至Win系统(GBK)格式)
+                // "-finput-charset=UTF-8", "-fexec-charset=UTF-8", // 转换文件格式(至UTF-8格式)
+                 // 编译当前文件
+                /*
+                "${file}",
+                "-o", "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+                */
+                // 手动编译2048文件
+                ///*
+                "${workspaceFolder}/GameBase.cpp",
+                "${workspaceFolder}/Game2048/Function/Function2048.cpp",
+                "${workspaceFolder}/Game2048/Start2048.cpp",
+                "-o", "${workspaceFolder}/StartGames/Start2048.exe",
+                "-I", "${workspaceFolder}",
+                //*/
+                "-I", "C:/msys64/ucrt64/include", // SFML 头文件路径
+                "-L", "C:/msys64/ucrt64/lib", // SFML 库路径
                 "-lsfml-graphics", // 按依赖顺序链接
                 "-lsfml-window",
                 "-lsfml-system"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}"
             },
             "problemMatcher": [
                 "$gcc"
