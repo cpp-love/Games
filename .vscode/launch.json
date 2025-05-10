@@ -7,14 +7,17 @@
             "name": "启动(gdb)于game_2048文件夹",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            // 运行当前文件
+            // "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+            // 运行2048文件
+            "program": "${workspaceFolder}/StartGames/Start2048.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/StartGames",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:/msys64/mingw64/bin/gdb.exe",
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
