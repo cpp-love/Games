@@ -60,8 +60,8 @@
  * -# 创建初始项目
  *    (GameBase.hpp                +
  *     GameBase.cpp                +
- *     Game2048/Function2048.hpp   +
- *     Game2048/Function2048.cpp   +
+ *     Game2048/Function/Function2048.hpp   +
+ *     Game2048/Function/Function2048.cpp   +
  *     Game2048/Start2048.cpp)
  * 
  * </table>
